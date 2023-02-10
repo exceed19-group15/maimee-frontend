@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Play from './pages/Play.jsx'
 
 function App() {
+
   return (
     <div>
          <BrowserRouter>
@@ -16,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
