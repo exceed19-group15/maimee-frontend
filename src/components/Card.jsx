@@ -11,7 +11,7 @@ const Card = ({name, level, imgURL, info, min}) => {
             </div>
 
             <div class="bottom-left">
-                <p><AiFillPlayCircle/>3min</p>
+                <p><AiFillPlayCircle/> 3min</p>
             </div>
 
         </div>

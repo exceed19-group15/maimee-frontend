@@ -6,20 +6,25 @@ html {
     margin-top: 1rem;
 }
 
-.two-column {
+/* .two-column {
     display: grid;
     grid-template-columns: 30% 70%;
-}
+    align-items: flex-start;
+} */
 
 .col-1 {
     list-style-type: none;
-    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 25%;
     height: 100%;
+    /* width: 5rem; */
     overflow: auto;
+    position: fixed;
 }
 
 .col-2 {
-    margin-left: 100%;
+    margin-left: 25%;
     margin-top: 1rem;
 
 }
@@ -36,3 +41,8 @@ html {
 /* .container {
     position: relative;
 } */
+
+.sticky {
+    position: absolute;
+    top: 0;
+}

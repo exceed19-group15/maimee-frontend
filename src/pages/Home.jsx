@@ -3,9 +3,9 @@ import Card from "../components/Card"
 
 const Home = () => {
     return (
-        <div className="two-column">
+        <div>
             <div className="col-1">
-            <p>BEAT</p>
+            <p className="sticky">BEAT</p>
             </div>
 
             <div className="col-2">
