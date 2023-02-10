@@ -20,6 +20,7 @@ const Play = () => {
       getBeat(id).then(data => setBeat(data))
   //   getRecodes().then(data => setRecords(data))
    })
+   
 
   const handleonclick = (event) => {
     const val = "FINISHED";

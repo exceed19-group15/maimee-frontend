@@ -3,21 +3,21 @@ import LinearProgress from "@mui/material/LinearProgress";
 import { useEffect, useState } from "react";
 
 export default function LinearDeterminate({ duration }) {
-  console.log(duration)
-  const [progress, setProgress] = useState(0.1);
-  console.log(progress)
+  duration = 10/(duration/1000)
+  const [progress, setProgress] = useState(0);
+
 
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 100 ? 0.1 : prevProgress + 0.1
+        prevProgress >= 100 ? 0 : prevProgress + duration
       );
-    }, ((duration/1000) * 60) / 1000);
+    }, (100));
     return () => {
       clearInterval(timer);
     };
-  }, [progress]);
+  }, [duration, progress]);
 
   return (
     <Box sx={{ width: "100%" }}>
