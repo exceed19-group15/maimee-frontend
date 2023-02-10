@@ -17,6 +17,7 @@ const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration
             <img src={imageURL} alt="" />
             <div class="top-left">
                 <p>{name}</p>
+
             </div>
 
             <div class="bottom-left">
@@ -27,6 +28,10 @@ const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration
                 <p>
                     {Array.from(Array(difficulty).keys()).map(star => <AiFillStar size={40}/>)}
                 </p>
+            </div>
+            <div class="bottom-right">
+                <p>{bpm} BPM</p>
+                <p>{note_count} NOTE</p>
             </div>
         </div>
 

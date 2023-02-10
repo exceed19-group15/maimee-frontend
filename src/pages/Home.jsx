@@ -10,7 +10,7 @@ const sampleData = [
     name: "YOYO",
     difficulty: 3,
     note_count: 20,
-    bpm: 0,
+    bpm: 100,
     duration: 4,
     imageURL:
       "https://is4-ssl.mzstatic.com/image/thumb/Music112/v4/40/a1/31/40a13176-1ec4-7506-0fe4-6f7d2a133aa6/10_001_K1LLUA_-_Wabisabi.jpg/400x400cc.jpg",
@@ -20,7 +20,7 @@ const sampleData = [
     name: "YOYO2",
     difficulty: 5,
     note_count: 20,
-    bpm: 0,
+    bpm: 50,
     duration: 3,
     imageURL:
       "https://c4.wallpaperflare.com/wallpaper/586/603/742/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg",
