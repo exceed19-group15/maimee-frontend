@@ -25,7 +25,7 @@ const Card = ({beatmap_id, name, image_url, difficulty, note_count, bpm, duratio
             </div>
 
             <div class="bottom-left">
-                <p><AiFillPlayCircle size={25}/> {duration}min</p>
+                <p><AiFillPlayCircle size={25}/> {duration/1000}sec</p>
             </div>
 
             <div class="top-right">
@@ -34,7 +34,6 @@ const Card = ({beatmap_id, name, image_url, difficulty, note_count, bpm, duratio
                 </p>
             </div>
             <div class="bottom-right">
-                <p>{bpm} BPM</p>
                 <p>{note_count} NOTE</p>
             </div>
         </div>
