@@ -10,7 +10,7 @@ const Card = ({beatmap_id, name, image_url, difficulty, note_count, bpm, duratio
         setNumber(beatmap_id)
     }
     const setzero = (e) => {
-        setNumber(0)
+        setNumber(-1)
     }
 
     const routeName = `/play/${beatmap_id}`

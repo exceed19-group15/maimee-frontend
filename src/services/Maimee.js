@@ -22,3 +22,15 @@ export async function getBeat(id) {
         console.log(err)
     }
 }
+
+
+export async function getRecords() {
+    try {
+    const res = await axios.get("http://group15.exceed19.online/play-record")
+    console.log(res.data);
+    return res.data
+    }
+    catch(err) { 
+        console.log(err)
+    }
+}
