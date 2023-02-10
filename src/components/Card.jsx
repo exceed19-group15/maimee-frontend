@@ -1,5 +1,6 @@
 import "../styles/card.css"
 import { AiFillPlayCircle, AiFillStar }from 'react-icons/ai'
+import {Link} from "react-router-dom"
 
 
 const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration, setNumber}) => {
@@ -12,7 +13,10 @@ const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration
         setNumber(0)
     }
 
+    const routeName = `/play/${beatmap_id}`
+
     return (
+        <Link to={routeName}>
         <div className="container" onMouseOver={board} onMouseLeave={setzero}>
             <img src={imageURL} alt="" />
             <div class="top-left">
@@ -26,7 +30,7 @@ const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration
 
             <div class="top-right">
                 <p>
-                    {Array.from(Array(difficulty).keys()).map(star => <AiFillStar size={40}/>)}
+                    {Array.from(Array(difficulty).keys()).map(star => <AiFillStar size={40} className='star'/>)}
                 </p>
             </div>
             <div class="bottom-right">
@@ -34,7 +38,7 @@ const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration
                 <p>{note_count} NOTE</p>
             </div>
         </div>
-
+        </Link>
     )
 }
 

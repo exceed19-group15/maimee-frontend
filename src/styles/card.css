@@ -39,6 +39,11 @@ img {
     right: 8rem;
 }
 
+.star {
+    color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
 .bottom-right {
     position: absolute;
     bottom: 45px;
