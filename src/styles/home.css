@@ -4,6 +4,7 @@ html {
     padding-left: 3rem;
     box-sizing: border-box;
     margin-top: 1rem;
+    overflow-x: hidden;
 }
 
 /* .two-column {
@@ -42,7 +43,11 @@ html {
     position: relative;
 } */
 
-.sticky {
-    position: absolute;
-    top: 0;
+h1 {
+    width: auto;
+    padding: 1rem;
+    border: 1px solid rgb(140, 140, 140);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(111.49deg, rgba(5, 3, 6, 0.4) -8.95%, rgba(255, 255, 255, 0.01) 114%);
+    border-radius: 25px;
+    box-sizing: border-box;
 }

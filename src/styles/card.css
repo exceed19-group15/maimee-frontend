@@ -1,12 +1,18 @@
 .container {
     position: relative;
+    transition: all .2s ease-in-out;
+
+}
+.container:hover {
+    transform: scale(1.1);
 }
 
 img {
     object-fit: cover;
     /* flex-grow: 1; */
-    width: 95%;
+    width: 80%;
     height: 200px;
+    margin-left: 10%;
 
     filter: drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.25));
     border-radius: 40px;
@@ -17,13 +23,20 @@ img {
 .top-left {
     position: absolute;
     top: -35px;
-    left: 1.5rem;
+    left: 8rem;
 }
 
 .bottom-left {
     position: absolute;
     bottom: 35px;
-    left: 1.5rem;
+    left: 8rem;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 0.5rem;
+    right: 8rem;
 }
 
 .top-left > p {
@@ -41,39 +54,42 @@ img {
 }
 
 .bottom-left > p {
-
     font-family: 'Itim', cursive;
     font-family: 'Prompt', sans-serif;
     font-style: normal;
     font-size: 30px;
     text-transform: uppercase;
     letter-spacing: 3px;
-
     padding: 0.5rem;
-
     color: #484848;
-
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-
-    /* background: rgba(0, 0, 0, 0.2); */
-    /* backdrop-filter: blur(50px); */
-    /* Note: backdrop-filter has minimal browser support */
     border-radius: 15px;
-
     background-color: #ffffff;
     border: 1px solid black;
     opacity: 0.6;
 }
-  
-/* Top right text */
-/* .top-right {
+
+
+/* a:hover > img{
+    object-fit: cover;
+    width: 95%;
+    height: 225px;
+    margin-left: 0;
+
+    filter: drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 40px;
+    margin-bottom: 2rem;
+  }
+
+  a:hover > .top-left {
     position: absolute;
-    top: 8px;
-    right: 16px;
-} */
-  
-p > img {
-    width: 50px;
-    height: 50px;
+    top: -35px;
+    left: 1.5rem;
 }
+
+a:hover > .bottom-left {
+    position: absolute;
+    bottom: 35px;
+    left: 1.5rem;
+} */
