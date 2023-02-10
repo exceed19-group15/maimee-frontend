@@ -3,7 +3,7 @@ import axios from "axios"
 
 export async function getBeats() {
     try {
-    const res = await axios.get("")
+    const res = await axios.get("http://group15.exceed19.online/beatmap/")
     console.log(res.data);
     return res.data
     }
@@ -12,9 +12,9 @@ export async function getBeats() {
     }
 }
 
-export async function getRecodes() {
+export async function getBeat(id) {
     try {
-    const res = await axios.get("")
+    const res = await axios.get(`http://group15.exceed19.online/beatmap/${id}`)
     console.log(res.data);
     return res.data
     }

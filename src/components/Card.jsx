@@ -3,7 +3,7 @@ import { AiFillPlayCircle, AiFillStar }from 'react-icons/ai'
 import {Link} from "react-router-dom"
 
 
-const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration, setNumber}) => {
+const Card = ({beatmap_id, name, image_url, difficulty, note_count, bpm, duration, setNumber}) => {
 
 
     const board = (e) => {
@@ -18,7 +18,7 @@ const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration
     return (
         <Link to={routeName}>
         <div className="container" onMouseOver={board} onMouseLeave={setzero}>
-            <img src={imageURL} alt="" />
+            <img src={image_url} alt="" />
             <div class="top-left">
                 <p>{name}</p>
 
