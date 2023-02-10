@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { update_Gamestate } from "../services/Mai.js";
 import Button from "@mui/material/Button";
 import ProgressBar from "../components/Progress";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getBeat } from "../services/Maimee";
+import { Link } from 'react-router-dom'
 
 const Play = () => {
-
+const nav = useNavigate()
   const [Giveup, setGiveup] = useState([]);
   const { id } = useParams()
   const [beat, setBeat] = useState([])
@@ -25,7 +26,9 @@ const Play = () => {
   const handleonclick = (event) => {
     const val = "FINISHED";
     setGiveup(val);
-    update_Gamestate({ game_state: val, beatmap_id: null });
+    update_Gamestate({ game_state: val, beatmap_id: id });
+    nav('/')
+    
   };
   
   return (
@@ -42,11 +45,9 @@ const Play = () => {
       <div className="container-play">
         <img src={beat.image_url} alt="" />
         <h1 className="song">{beat.name}</h1>
-        {/* <ExampleCounter/> */}
         <ProgressBar duration={beat.duration}/>
-
         <div className="btt">
-          <Button onClick={handleonclick}>Give up</Button>
+          <Button onClick={handleonclick} >Give up</Button>
         </div>
       </div>
     </html>

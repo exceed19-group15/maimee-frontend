@@ -11,8 +11,8 @@ export async function getgame_state() {
         console.log(err)
     }
 }
-export async function update_Gamestate(body) {
-    const res = await axios.post(`http://group15.exceed19.online/game-state`, body
+export async function update_Gamestate(body, id) {
+    const res = await axios.put(`http://group15.exceed19.online/game-state/${id}`, body
     )
     console.log(res.data);
 
