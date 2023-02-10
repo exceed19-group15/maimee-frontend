@@ -87,20 +87,14 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
-export default function LinearDeterminate() {
-  const [progress, setProgress] = React.useState(0);
+export default function LinearDeterminate({duration}) {
+
+  const [progress, setProgress] = React.useState(0.1);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress === 100) {
-          return 0;
-        }
-        const diff = 4 * 60/100;
-        return Math.min(oldProgress + diff, 100);
-      });
-    }, 800);
-
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0.1 : prevProgress + 0.1));
+    }, duration*60);
     return () => {
       clearInterval(timer);
     };

@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 // import { CircularProgress } from "@mui/material";
 import CircularStatic from "../components/Progress";
 
-const Play = () => {
+const Play = ({beatmap_id, name, difficulty, note_count, duration, image_url}) => {
     const [Giveup, setGiveup] = useState([])
     useEffect(() => {
         getgame_state().then(data => setGiveup(data))
@@ -19,10 +19,13 @@ const Play = () => {
         setGiveup(val)
         update_Gamestate({game_state:val, beatmap_id:null})
 
+    
+
 
 
     };
     return(
+        
         <html className="main"  >
         <div className="container">
          
@@ -30,7 +33,7 @@ const Play = () => {
         />
         <h1 className="song">BEAT NAME</h1>
         {/* <ExampleCounter/> */}
-        <CircularStatic/>
+        <CircularStatic duration={duration}/>
 
         <div className="btt">
         <Button onClick={handleonclick} >
