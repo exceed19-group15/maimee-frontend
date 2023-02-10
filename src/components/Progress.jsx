@@ -83,25 +83,26 @@
 //   return <CircularProgressWithLabel value={progress} />;
 // }
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
-export default function LinearDeterminate({duration}) {
-
+export default function LinearDeterminate({ duration }) {
   const [progress, setProgress] = React.useState(0.1);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 0.1 : prevProgress + 0.1));
-    }, duration*60);
+      setProgress((prevProgress) =>
+        prevProgress >= 100 ? 0.1 : prevProgress + 0.1
+      );
+    }, duration * 60);
     return () => {
       clearInterval(timer);
     };
   }, []);
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: "100%" }}>
       <LinearProgress variant="determinate" value={progress} />
     </Box>
   );
