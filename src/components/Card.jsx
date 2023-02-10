@@ -1,21 +1,44 @@
 import "../styles/card.css"
-import { AiFillPlayCircle }from 'react-icons/ai'
+import { AiFillPlayCircle, AiFillStar }from 'react-icons/ai'
+import {Link} from "react-router-dom"
 
 
-const Card = ({name, level, imgURL, info, min}) => {
+const Card = ({beatmap_id, name, imageURL, difficulty, note_count, bpm, duration, setNumber}) => {
+
+
+    const board = (e) => {
+        setNumber(beatmap_id)
+    }
+    const setzero = (e) => {
+        setNumber(0)
+    }
+
+    const routeName = `/play/${beatmap_id}`
+
     return (
-        <div className="container">
-            <img src="https://is4-ssl.mzstatic.com/image/thumb/Music112/v4/40/a1/31/40a13176-1ec4-7506-0fe4-6f7d2a133aa6/10_001_K1LLUA_-_Wabisabi.jpg/400x400cc.jpg" alt="" />
+        <Link to={routeName}>
+        <div className="container" onMouseOver={board} onMouseLeave={setzero}>
+            <img src={imageURL} alt="" />
             <div class="top-left">
-                <p>BeatName</p>
+                <p>{name}</p>
+
             </div>
 
             <div class="bottom-left">
-                <p><AiFillPlayCircle/>3min</p>
+                <p><AiFillPlayCircle size={25}/> {duration}min</p>
             </div>
 
+            <div class="top-right">
+                <p>
+                    {Array.from(Array(difficulty).keys()).map(star => <AiFillStar size={40} className='star'/>)}
+                </p>
+            </div>
+            <div class="bottom-right">
+                <p>{bpm} BPM</p>
+                <p>{note_count} NOTE</p>
+            </div>
         </div>
-
+        </Link>
     )
 }
 

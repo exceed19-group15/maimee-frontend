@@ -4,22 +4,28 @@ html {
     padding-left: 3rem;
     box-sizing: border-box;
     margin-top: 1rem;
+    overflow-x: hidden;
 }
 
-.two-column {
+/* .two-column {
     display: grid;
     grid-template-columns: 30% 70%;
-}
+    align-items: flex-start;
+} */
 
 .col-1 {
     list-style-type: none;
-    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 25%;
     height: 100%;
+    /* width: 5rem; */
     overflow: auto;
+    position: fixed;
 }
 
 .col-2 {
-    margin-left: 100%;
+    margin-left: 25%;
     margin-top: 1rem;
 
 }
@@ -36,3 +42,12 @@ html {
 /* .container {
     position: relative;
 } */
+
+h1 {
+    width: 95%;
+    padding: 1rem;
+    border: 1px solid rgb(140, 140, 140);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(111.49deg, rgba(5, 3, 6, 0.4) -8.95%, rgba(255, 255, 255, 0.01) 114%);
+    border-radius: 25px;
+    box-sizing: border-box;
+}

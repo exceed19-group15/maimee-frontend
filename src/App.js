@@ -1,23 +1,20 @@
-import {
-  Route,
-  Routes,
-  BrowserRouter
-} from "react-router-dom";
-import Home from './pages/Home'
-import Play from  './pages/Play'
+import './App.css';
+import Home from './pages/Home.jsx';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Play from './pages/Play.jsx'
+
 function App() {
 
   return (
-    <>
-    <BrowserRouter>
+    <div>
+         <BrowserRouter>
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/plays" element={<Play />}/>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/play/:id" element={<Play />}></Route>
       </Routes>
-      </BrowserRouter>
-      
-    </>
-  )
+    </BrowserRouter>
+    </div>
+  );
 }
 
 export default App
