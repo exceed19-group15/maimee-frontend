@@ -1,0 +1,78 @@
+.container {
+    position: relative;
+}
+
+img {
+    object-fit: cover;
+    width: 1000px;
+    height: 200px;
+
+    filter: drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 40px;
+    margin-bottom: 2rem;
+}
+  
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: -35px;
+    left: 1.5rem;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 35px;
+    left: 1.5rem;
+}
+
+.top-left > p {
+
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-style: normal;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bottom-left > p {
+
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    padding: 0.5rem;
+
+    color: #484848;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+    /* background: rgba(0, 0, 0, 0.2); */
+    /* backdrop-filter: blur(50px); */
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 15px;
+
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+  
+/* Top right text */
+/* .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+} */
+  
+p > img {
+    width: 50px;
+    height: 50px;
+}

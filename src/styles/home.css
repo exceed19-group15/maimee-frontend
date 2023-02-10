@@ -1,0 +1,38 @@
+html {
+    background: #1F1B1B;
+    color: white;
+    padding-left: 3rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.col-1 {
+    list-style-type: none;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.col-2 {
+    margin-left: 100%;
+    margin-top: 1rem;
+
+}
+
+.col-1 > p {
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-size: 64px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-top: 1rem;
+}
+
+/* .container {
+    position: relative;
+} */
