@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 
 const Play = () => {
 const nav = useNavigate()
-  const [Giveup, setGiveup] = useState([]);
   const { id } = useParams()
   const [beat, setBeat] = useState([])
 
@@ -24,9 +23,7 @@ const nav = useNavigate()
    
 
   const handleonclick = (event) => {
-    const val = "FINISHED";
-    setGiveup(val);
-    update_Gamestate({ game_state: val, beatmap_id: id });
+    update_Gamestate({ "game_state": "FINISHED", "beatmap_id": id });
     nav('/')
     
   };

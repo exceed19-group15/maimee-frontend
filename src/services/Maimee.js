@@ -4,7 +4,6 @@ import axios from "axios"
 export async function getBeats() {
     try {
     const res = await axios.get("http://group15.exceed19.online/beatmap/")
-    console.log(res.data);
     return res.data
     }
     catch(err) { 
@@ -15,7 +14,6 @@ export async function getBeats() {
 export async function getBeat(id) {
     try {
     const res = await axios.get(`http://group15.exceed19.online/beatmap/${id}`)
-    console.log(res.data);
     return res.data
     }
     catch(err) { 
@@ -26,8 +24,7 @@ export async function getBeat(id) {
 
 export async function getRecords() {
     try {
-    const res = await axios.get("http://group15.exceed19.online/play-record")
-    console.log(res.data);
+    const res = await axios.get("http://group15.exceed19.online/play-record/")
     return res.data
     }
     catch(err) { 

@@ -1,6 +1,7 @@
 import "../styles/card.css"
 import { AiFillPlayCircle, AiFillStar }from 'react-icons/ai'
 import {Link} from "react-router-dom"
+import { update_Gamestate } from "../services/Mai"
 
 
 const Card = ({beatmap_id, name, image_url, difficulty, note_count, bpm, duration, setNumber}) => {
@@ -13,10 +14,16 @@ const Card = ({beatmap_id, name, image_url, difficulty, note_count, bpm, duratio
         setNumber(-1)
     }
 
+
     const routeName = `/play/${beatmap_id}`
 
+    const setState = (event) => {
+        update_Gamestate({"game_state": "PLAYING", "beatmap_id": beatmap_id})
+        console.log(beatmap_id)
+    }
+
     return (
-        <Link to={routeName}>
+        <Link to={routeName} onClick={setState}>
         <div className="container" onMouseOver={board} onMouseLeave={setzero}>
             <img src={image_url} alt="" />
             <div class="top-left">
