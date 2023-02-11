@@ -1,0 +1,65 @@
+.swal-text {
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 0px 2.5px 1px rgba(0, 0, 0, 0.25), 0px 4px 6px rgba(0, 0, 0, 0.25);
+  }
+
+
+  .swal2-title {
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0px 2.5px 1px rgba(0, 0, 0, 0.25), 0px 4px 6px rgba(0, 0, 0, 0.25);
+    color: white
+  }
+
+
+  .swal2-modal {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 35px;
+  }
+
+  .swal2-confirm {
+    border-radius: 30px !important;
+    background-color: white !important; 
+    color: black !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .swal2-confirm:hover {
+    color: white !important;
+    background-color: rgb(140, 201, 238) !important;
+  }
+
+  .swal2-deny {
+    border-radius: 30px !important;
+    background-color: white !important; 
+    color: black !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .swal2-deny:hover {
+    color: white !important;
+    background-color: rgb(140, 201, 238) !important;
+  }
+
+  .swal2-cancel {
+    border-radius: 30px !important;
+    background-color: white !important;
+    color: black !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .swal2-cancel:hover {
+    color: white !important;
+    background-color: rgb(140, 201, 238) !important;
+  }
