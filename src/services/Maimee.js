@@ -31,3 +31,13 @@ export async function getRecords() {
         console.log(err)
     }
 }
+
+export async function getLeaderBoard(id, limit) {
+    try {
+    const res = await axios.get(`http://group15.exceed19.online/leaderboard/${id}/?limit=${limit}`)
+    return res.data
+    }
+    catch(err) { 
+        console.log(err)
+    }
+}

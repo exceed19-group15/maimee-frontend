@@ -6,26 +6,30 @@ import ProgressBar from "../components/Progress";
 import { useParams } from "react-router-dom";
 import { getBeat } from "../services/Maimee";
 import sweethem from "../services/sweetal";
+import { getgame_state } from "../services/Mai.js";
+
 
 const Play = () => {
   const { id } = useParams()
   const [beat, setBeat] = useState([])
-
-//   useEffect(() => {
-//     getgame_state().then((data) => setGiveup(data));
-//   }, []);
+  const [state, setState] = useState([])
 
    useEffect(() => {
       getBeat(id).then(data => setBeat(data))
-  //   getRecodes().then(data => setRecords(data))
-   })
+      getgame_state().then(data => setState(data))
+   },[id, state])
 
    let time = beat.duration
+
+   let check = true
    
+   if (state.game_state === "FINISHED" || state.game_state === "GIVEUP") {
+        check = false
+   }
 
   const handleonclick = () => {
-    sweethem(id, )
-    update_Gamestate({ "game_state": "FINISHED", "beatmap_id": id });
+    sweethem(id)
+    update_Gamestate({ "game_state": "GIVEUP", "beatmap_id": id });
   };
   
   return (
@@ -42,7 +46,7 @@ const Play = () => {
       <div className="container-play">
         <img src={beat.image_url} alt="" />
         <h1 className="song">{beat.name}</h1>
-        <ProgressBar duration={time}/>
+        <ProgressBar duration={time} checkstate={check}/>
         <div className="btt">
           <Button onClick={handleonclick} >Give up</Button>
           

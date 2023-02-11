@@ -2,9 +2,7 @@
 
 // import 'sweetalert2/src/sweetalert2.scss'
 // import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
 import swal from "sweetalert"
-import Home from "../pages/Home";
 import { update_Gamestate } from "./Mai";
 
 function sweethem(id){

@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 import { useEffect, useState } from "react";
 
-export default function LinearDeterminate({ duration }) {
+export default function LinearDeterminate({ duration, checkstate}) {
   duration = 10/(duration/1000)
   const [progress, setProgress] = useState(0.1);
 
@@ -13,6 +13,11 @@ export default function LinearDeterminate({ duration }) {
 
 
   useEffect(() => {
+    if (!checkstate) {
+      setProgress(100)
+      console.log("FINISHED")
+      return;
+    }
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
         prevProgress >= 100 ? 100 : prevProgress + duration
@@ -21,7 +26,8 @@ export default function LinearDeterminate({ duration }) {
     return () => {
       clearInterval(timer);
     };
-  }, [duration, progress]);
+  }, [checkstate,duration, progress]);
+
 
   return (
     <Box sx={{ width: "100%" }}>

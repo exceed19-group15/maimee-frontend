@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Board from "../components/Board";
 import { getBeats } from "../services/Maimee";
-import { getRecords } from "../services/Maimee";
+import { getLeaderBoard } from "../services/Maimee";
+import { update_Gamestate } from "../services/Mai";
 
 
 const Home = () => {
@@ -12,14 +13,16 @@ const Home = () => {
   const [records, setRecords] = useState([])
   const [number, setNumber] = useState(-1);
 
+
   records.sort(function (a, b) {
     return b.score - a.score;
   });
 
   useEffect(() => {
       getBeats().then(data => setBeats(data))
-      getRecords().then(data => setRecords(data))
-  },[])
+      getLeaderBoard(number, 5).then(data => setRecords(data))
+      update_Gamestate({"game_state": "MENU", "beatmap_id": null})
+  },[number])
 
   return (
     <div>
@@ -29,7 +32,6 @@ const Home = () => {
         {number === -1
           ? null
           : records
-              .filter((record) => record.beatmap_id === number)
               .map((record) => <Board {...record} />)}
       </div>
       <div className="col-2">
