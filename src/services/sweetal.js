@@ -21,7 +21,6 @@ function sweethem(id){
           case "catch":
             // swal("Okay!", "Restart again", "success");
             window.location = `/play/${id}`;
-            window.location.reload();
             break;
        
           default:
