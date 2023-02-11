@@ -3,7 +3,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import { useEffect, useState } from "react";
 
 export default function LinearDeterminate({ duration, checkstate}) {
-  duration = 10/(duration/1000)
+  duration = 9/(duration/1000)
   const [progress, setProgress] = useState(0.1);
 
   if (!progress)

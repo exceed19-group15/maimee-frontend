@@ -25,6 +25,7 @@ const Play = () => {
    
    if (state.game_state === "FINISHED" || state.game_state === "GIVEUP") {
         check = false
+        sweethem(id)
    }
 
   const handleonclick = () => {
