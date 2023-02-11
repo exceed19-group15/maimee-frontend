@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
       getBeats().then(data => setBeats(data))
       getRecords().then(data => setRecords(data))
-  },[])
+  })
 
   return (
     <div>
