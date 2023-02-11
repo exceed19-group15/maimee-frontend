@@ -24,8 +24,8 @@ const Play = () => {
    
 
   const handleonclick = () => {
-    sweethem(id, )
-    update_Gamestate({ "game_state": "FINISHED", "beatmap_id": id });
+    sweethem(id)
+    update_Gamestate({ "game_state": "GIVEUP", "beatmap_id": id });
   };
   
   return (

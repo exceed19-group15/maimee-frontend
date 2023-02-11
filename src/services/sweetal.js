@@ -8,25 +8,21 @@ import Home from "../pages/Home";
 import { update_Gamestate } from "./Mai";
 
 function sweethem(id){
-    swal("Are you sure?", {
+    swal("Are you giveup?",{
         buttons: {
-          cancel: "GiveUp!",
           catch: {
             text: "Retry!",
             value: "catch",
-          },
+          },cancel: "GiveUp!",
         },
-      })
+      closeOnClickOutside: false})
       .then((value) => {
         switch (value) {
           case "catch":
-            // swal("Okay!", "Restart again", "success");
             window.location = `/play/${id}`;
             update_Gamestate({ "game_state": "PLAYING", "beatmap_id": id });
             break;
-       
           default:
-            // swal("Oops! your score gone");
             window.location = '/';
             update_Gamestate({ "game_state": "MENU", "beatmap_id": null });
 

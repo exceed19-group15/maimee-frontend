@@ -25,3 +25,20 @@ export async function getbeatmap_info() {
         console.log(err)
     }
 }
+
+export async function getrecent() {
+    try {
+    const res = await axios.get("http://group15.exceed19.online/recent")
+    return res.data
+    }
+    catch(err) { 
+        console.log(err)
+    }
+}
+
+export async function update_Recent(body) {
+    const res = await axios.post("http://group15.exceed19.online/recent", body
+    )
+
+    return res.data
+}
