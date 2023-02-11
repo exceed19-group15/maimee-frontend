@@ -19,12 +19,13 @@ function sweethem(id){
       .then((value) => {
         switch (value) {
           case "catch":
-            swal("Okay!", "Restart again", "success");
+            // swal("Okay!", "Restart again", "success");
             window.location = `/play/${id}`;
+            window.location.reload();
             break;
        
           default:
-            swal("Oops! your score gone");
+            // swal("Oops! your score gone");
             window.location = '/';
 
         }

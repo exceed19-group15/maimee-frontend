@@ -3,7 +3,7 @@ import axios from "axios"
 
 export async function getBeats() {
     try {
-    const res = await axios.get("http://group15.exceed19.online/beatmap/")
+    const res = await axios.get("http://group15.exceed19.online/beatmap")
     return res.data
     }
     catch(err) { 
@@ -24,7 +24,7 @@ export async function getBeat(id) {
 
 export async function getRecords() {
     try {
-    const res = await axios.get("http://group15.exceed19.online/play-record/")
+    const res = await axios.get("http://group15.exceed19.online/play-record")
     return res.data
     }
     catch(err) { 
