@@ -20,8 +20,7 @@ const Play = () => {
   //   getRecodes().then(data => setRecords(data))
    })
 
-   const time = beat.duration
-   console.log(time)
+   let time = beat.duration
    
 
   const handleonclick = () => {
