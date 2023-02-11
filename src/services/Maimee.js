@@ -41,3 +41,13 @@ export async function getLeaderBoard(id, limit) {
         console.log(err)
     }
 }
+
+export async function getRecent() {
+    try {
+    const res = await axios.get("http://group15.exceed19.online/recent")
+    return res.data
+    }
+    catch(err) { 
+        console.log(err)
+    }
+}

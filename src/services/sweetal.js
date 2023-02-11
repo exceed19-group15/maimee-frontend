@@ -4,16 +4,21 @@
 // import Swal from "sweetalert2";
 import swal from "sweetalert"
 import { update_Gamestate } from "./Mai";
+import "../styles/swal.css"
 
 function sweethem(id){
     swal("Are you sure?", {
         buttons: {
-          cancel: "GiveUp!",
+          giveup:{ 
+            text: "GiveUp!",
+            value: "giveup"
+          },
           catch: {
             text: "Retry!",
             value: "catch",
           },
         },
+        closeOnClickOutside: false
       })
       .then((value) => {
         switch (value) {
@@ -22,11 +27,14 @@ function sweethem(id){
             window.location = `/play/${id}`;
             update_Gamestate({ "game_state": "PLAYING", "beatmap_id": id });
             break;
-       
-          default:
-            // swal("Oops! your score gone");
+          case "giveup":
             window.location = '/';
             update_Gamestate({ "game_state": "MENU", "beatmap_id": null });
+            break;
+       
+          // eslint-disable-next-line no-fallthrough
+          default:
+            // swal("Oops! your score gone");
 
         }
       });

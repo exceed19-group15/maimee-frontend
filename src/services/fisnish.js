@@ -1,40 +1,39 @@
-// import Swal from 'sweetalert2/dist/sweetalert2.js'
-
-// import 'sweetalert2/src/sweetalert2.scss'
-// import Swal from "sweetalert2";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import { update_Gamestate } from "./Mai";
+import "../styles/swal.css";
+import { update_record } from "./Mai";
 
-function sweetalert(id) {
-  swal({
-    text: "Name",
-    content: "input",
-    buttons: {
-      save: {
-        text: "Save",
-        value: "save",
-      },
-      catch: {
-        text: "Retry!",
-        value: "catch",
-      },
-      cancel: "Menu",
+function sweetalert(beatmap_id, score, hit, miss, name) {
+  Swal.fire({
+    title: name,
+    html: `
+        <p>Hit: ${hit}</p>
+        <p>Miss: ${miss}</p>
+        <p>Score: ${score}</p>
+        <input type="text" id="name" class="swal2-input" placeholder="Name">
+        `,
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Save",
+    denyButtonText: "Retry",
+    cancelButtonText: "Menu",
+    focusConfirm: false,
+    preConfirm: () => {
+      const name = Swal.getPopup().querySelector("#name").value;
+
+      return { name: name };
     },
-  }).then((value) => {
-    switch (value) {
-      case "catch":
-        window.location = `/play/${id}`;
-        update_Gamestate({ game_state: "PLAYING", beatmap_id: id });
-        break;
-      case "save":
-        window.location = "/";
-
-        update_Gamestate({ game_state: "MENU", beatmap_id: id });
-        break;
-
-      default:
-        window.location = "/";
+  }).then((result) => {
+    if (result.isConfirmed) {
+        update_record(beatmap_id, {"username" : result.value.name, "score": score, "hit" : hit, "miss": miss})
         update_Gamestate({ game_state: "MENU", beatmap_id: null });
+        window.location = "/";
+    } else if (result.isDenied) {
+        update_Gamestate({ game_state: "PLAYING", beatmap_id: beatmap_id });
+      window.location = `/play/${beatmap_id}`;
+    } else {
+        update_Gamestate({ game_state: "MENU", beatmap_id: null });
+      window.location = "/";
     }
   });
 }

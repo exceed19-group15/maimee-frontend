@@ -25,3 +25,13 @@ export async function getbeatmap_info() {
         console.log(err)
     }
 }
+
+export async function update_record(id, body) {
+    try {
+    const res = await axios.post(`http://group15.exceed19.online/play-record/${id}`, body)
+    return res.data
+    }
+    catch(err) { 
+        console.log(err)
+    }
+}

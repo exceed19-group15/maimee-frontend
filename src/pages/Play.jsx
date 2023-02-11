@@ -8,29 +8,37 @@ import { getBeat } from "../services/Maimee";
 import sweetalert from "../services/fisnish";
 import sweethem from "../services/sweetal";
 import { getgame_state } from "../services/Mai.js";
+import { getRecent } from "../services/Maimee";
 
 
 const Play = () => {
   const { id } = useParams()
   const [beat, setBeat] = useState([])
   const [state, setState] = useState([])
+  const [recent, setRecent] = useState([])
   let check = true
 
    useEffect(() => {
     if (!check) {
+      getRecent().then(data => setRecent(data))
       return;
     }
       getBeat(id).then(data => setBeat(data))
       getgame_state().then(data => setState(data))
-   },[check,id, state])
+
+   },[check, id, state])
 
    let time = beat.duration
 
    
    if (state.game_state === "FINISHED" || state.game_state === "GIVEUP") {
         check = false
-        sweetalert(id)
+  
    }
+
+   if (state.game_state === "FINISHED") {
+    sweetalert(id, recent.score, recent.hit, recent.miss, beat.name)
+  }
 
   const handleonclick = () => {
     sweethem(id)
