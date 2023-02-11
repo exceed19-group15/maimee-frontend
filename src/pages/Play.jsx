@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import ProgressBar from "../components/Progress";
 import { useParams } from "react-router-dom";
 import { getBeat } from "../services/Maimee";
+import sweetalert from "../services/fisnish";
 import sweethem from "../services/sweetal";
 import { getgame_state } from "../services/Mai.js";
 
@@ -13,19 +14,22 @@ const Play = () => {
   const { id } = useParams()
   const [beat, setBeat] = useState([])
   const [state, setState] = useState([])
+  let check = true
 
    useEffect(() => {
+    if (!check) {
+      return;
+    }
       getBeat(id).then(data => setBeat(data))
       getgame_state().then(data => setState(data))
-   },[id, state])
+   },[check,id, state])
 
    let time = beat.duration
 
-   let check = true
    
    if (state.game_state === "FINISHED" || state.game_state === "GIVEUP") {
         check = false
-        sweethem(id)
+        sweetalert(id)
    }
 
   const handleonclick = () => {
@@ -50,7 +54,6 @@ const Play = () => {
         <ProgressBar duration={time} checkstate={check}/>
         <div className="btt">
           <Button onClick={handleonclick} >Give up</Button>
-          
         </div>
       </div>
     </div>
