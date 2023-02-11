@@ -5,6 +5,7 @@
 import { useParams } from "react-router-dom";
 import swal from "sweetalert"
 import Home from "../pages/Home";
+import { update_Gamestate } from "./Mai";
 
 function sweethem(id){
     swal("Are you sure?", {
@@ -21,11 +22,13 @@ function sweethem(id){
           case "catch":
             // swal("Okay!", "Restart again", "success");
             window.location = `/play/${id}`;
+            update_Gamestate({ "game_state": "PLAYING", "beatmap_id": id });
             break;
        
           default:
             // swal("Oops! your score gone");
             window.location = '/';
+            update_Gamestate({ "game_state": "MENU", "beatmap_id": null });
 
         }
       });
