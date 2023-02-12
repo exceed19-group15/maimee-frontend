@@ -37,7 +37,7 @@ function sweetalert(beatmap_id, score, hit, miss, name) {
     } else if (result.isDenied) {
       update_Gamestate({ game_state: "PLAYING", beatmap_id: beatmap_id });
       window.location = `/play/${beatmap_id}`;
-    } else {
+    } else if (result.isDismissed){
       update_Gamestate({ game_state: "MENU", beatmap_id: null });
       window.location = "/";
     }
