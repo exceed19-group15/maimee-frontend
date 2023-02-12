@@ -1,13 +1,10 @@
-// import Swal from 'sweetalert2/dist/sweetalert2.js'
-
-// import 'sweetalert2/src/sweetalert2.scss'
-// import Swal from "sweetalert2";
 import swal from "sweetalert"
 import { update_Gamestate } from "./Mai";
-import "../styles/swal.css"
+import "../styles/swalthem.css"
 
 function sweethem(id){
-    swal("Are you sure?", {
+    swal({text:"YOU SUCK!!", 
+    icon: "https://w0.peakpx.com/wallpaper/335/1005/HD-wallpaper-puppy-cute-green-caine-hand-dog-animal-sweet-thumbnail.jpg",
         buttons: {
           giveup:{ 
             text: "GiveUp!",
@@ -23,7 +20,6 @@ function sweethem(id){
       .then((value) => {
         switch (value) {
           case "catch":
-            // swal("Okay!", "Restart again", "success");
             window.location = `/play/${id}`;
             update_Gamestate({ "game_state": "PLAYING", "beatmap_id": id });
             break;
@@ -34,7 +30,6 @@ function sweethem(id){
        
           // eslint-disable-next-line no-fallthrough
           default:
-            // swal("Oops! your score gone");
 
         }
       });

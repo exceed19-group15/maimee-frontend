@@ -1,0 +1,109 @@
+.swal-text {
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color:red;
+    text-shadow: 0px 2.5px 1px rgba(0, 0, 0, 0.25), 0px 4px 6px rgba(0, 0, 0, 0.25);
+    position: relative;
+    float: none;
+    line-height: normal;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    max-width: calc(100% - 20px);
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+  .swal-text:first-child {
+    margin-top: 45px;
+}
+
+
+  .swal2-title {
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0px 2.5px 1px rgba(0, 0, 0, 0.25), 0px 4px 6px rgba(0, 0, 0, 0.25);
+    color: white
+  }
+
+  .swal-overlay--show-modal .swal-modal {
+    opacity: 1;
+    pointer-events: auto;
+    box-sizing: border-box;
+    -webkit-animation: showSweetAlert .3s;
+    animation: showSweetAlert .3s;
+    will-change: transform;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 35px;
+    
+}
+  .swal2-modal {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 35px;
+    
+  }
+.swal-button{
+    font-size: 16px;
+    font-weight: 200;
+    font-family: 'Itim', cursive;
+    font-family: 'Prompt', sans-serif;
+    border-radius: 30px !important;
+    background-color: white !important; 
+    color: black !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
+}
+  
+
+
+  .swal-button:hover{
+    color: white !important;
+    background-color: rgb(140, 201, 238) !important;
+  }
+
+  .swal-footer {
+    text-align: center;
+    padding-top: 13px;
+    margin-top: 13px;
+    padding: 13px 16px;
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  filter: drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.25));
+  border-radius: 40px;
+  margin-bottom: 2rem;
+}
+.swal-icon--custom {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0;
+}
+.swal-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 0;
+  position: relative;
+  margin: 20px auto;
+}
+ */
