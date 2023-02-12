@@ -18,6 +18,7 @@ function sweetalert(beatmap_id, score, hit, miss, name) {
     denyButtonText: "Retry",
     cancelButtonText: "Save",
     focusConfirm: false,
+    allowOutsideClick: false,
     preConfirm: () => {
       const name = Swal.getPopup().querySelector("#name").value;
 
