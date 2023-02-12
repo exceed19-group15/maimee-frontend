@@ -19,8 +19,8 @@
 
   .swal2-confirm {
     border-radius: 30px !important;
-    background-color: white !important;
-    color: black !important;
+    background-color:#85CDFD !important;
+    color: white !important;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     font-family: 'Itim', cursive !important;
     font-family: 'Prompt', sans-serif !important;
@@ -51,8 +51,8 @@
 
   .swal2-cancel {
     border-radius: 30px !important;
-    background-color:#85CDFD !important;
-    color: white !important;
+    background-color:white !important;
+    color: black !important;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     font-family: 'Itim', cursive !important;
     font-family: 'Prompt', sans-serif !important;
