@@ -31,6 +31,7 @@ html {
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-top: 1rem;
+    margin-bottom: 2.5rem;
 }
 .col-1 > img {
     margin-top: -3rem;
