@@ -4,7 +4,6 @@ import "../styles/swalthem.css"
 
 function sweethem(id){
     swal({text:"YOU SUCK!!", 
-    icon: "https://w0.peakpx.com/wallpaper/335/1005/HD-wallpaper-puppy-cute-green-caine-hand-dog-animal-sweet-thumbnail.jpg",
         buttons: {
           giveup:{ 
             text: "GiveUp!",
