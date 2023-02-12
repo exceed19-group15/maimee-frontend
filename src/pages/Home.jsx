@@ -21,7 +21,7 @@ const Home = () => {
 
   useEffect(() => {
       getBeats().then(data => setBeats(data))
-      getLeaderBoard(number, 5).then(data => setRecords(data))
+      getLeaderBoard(number, 4).then(data => setRecords(data))
       update_Gamestate({"game_state": "MENU", "beatmap_id": null})
   },[number])
 
