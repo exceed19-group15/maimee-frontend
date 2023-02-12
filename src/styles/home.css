@@ -7,12 +7,6 @@ html {
     overflow-x: hidden;
 }
 
-/* .two-column {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    align-items: flex-start;
-} */
-
 .col-1 {
     list-style-type: none;
     margin: 0;
@@ -33,15 +27,18 @@ html {
 .col-1 > p {
     font-family: 'Itim', cursive;
     font-family: 'Prompt', sans-serif;
-    font-size: 64px;
+    font-size: 20px;
     text-transform: uppercase;
-    letter-spacing: 8px;
+    letter-spacing: 4px;
     margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+.col-1 > img {
+    margin-top: -3rem;
+    margin-left: -3rem;
+    margin-bottom: 1rem;
 }
 
-/* .container {
-    position: relative;
-} */
 
 h1 {
     width: 95%;

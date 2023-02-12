@@ -14,9 +14,9 @@ function sweetalert(beatmap_id, score, hit, miss, name) {
         `,
     showDenyButton: true,
     showCancelButton: true,
-    confirmButtonText: "Save",
+    confirmButtonText: "Menu",
     denyButtonText: "Retry",
-    cancelButtonText: "Menu",
+    cancelButtonText: "Save",
     focusConfirm: false,
     preConfirm: () => {
       const name = Swal.getPopup().querySelector("#name").value;
@@ -25,15 +25,16 @@ function sweetalert(beatmap_id, score, hit, miss, name) {
     },
   }).then((result) => {
     if (result.isConfirmed) {
-        update_record(beatmap_id, {"username" : result.value.name, "score": score, "hit" : hit, "miss": miss})
         update_Gamestate({ game_state: "MENU", beatmap_id: null });
         window.location = "/";
     } else if (result.isDenied) {
         update_Gamestate({ game_state: "PLAYING", beatmap_id: beatmap_id });
       window.location = `/play/${beatmap_id}`;
     } else {
-        update_Gamestate({ game_state: "MENU", beatmap_id: null });
+      update_record(beatmap_id, {"username" : result.value.name, "score": score, "hit" : hit, "miss": miss})
+      update_Gamestate({ game_state: "MENU", beatmap_id: null });
       window.location = "/";
+
     }
   });
 }
